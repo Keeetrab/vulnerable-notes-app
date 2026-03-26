@@ -1,0 +1,19 @@
+{
+  "name": "vulnerable-app",
+  "version": "1.0.0",
+  "description": "A deliberately vulnerable web application for the Claude Code workshop. Used to demonstrate how AI agents can discover and patch security issues.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

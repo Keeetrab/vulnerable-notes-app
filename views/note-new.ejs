@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Note — Classified Notes</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="classified-banner">// CLASSIFIED // TOP SECRET // AUTHORIZED PERSONNEL ONLY //</div>
+  <nav>
+    <a href="/">HQ</a> <span class="sep">|</span> <a href="/notes">My Notes</a> <span class="sep">|</span> <a href="/notes/new">New Note</a> <span class="sep">|</span> <a href="/logout">Logout [<%= user.username %>]</a>
+  </nav>
+  <h1>Create Classified Note</h1>
+  <form method="POST" action="/notes">
+    <label>Subject<br><input type="text" name="title" placeholder="Note subject line" required></label>
+    <label>Content<br><textarea name="content" required rows="8" placeholder="Enter classified information..."></textarea></label>
+    <button type="submit">Encrypt & Save</button>
+  </form>
+</body>
+</html>

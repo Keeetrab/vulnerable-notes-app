@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Login — Classified Notes</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="classified-banner">// CLASSIFIED // TOP SECRET // AUTHORIZED PERSONNEL ONLY //</div>
+  <nav><a href="/">HQ</a> <span class="sep">|</span> <a href="/login">Login</a> <span class="sep">|</span> <a href="/register">Register</a></nav>
+  <h1>Agent Login</h1>
+  <% if (error) { %><p class="error"><%= error %></p><% } %>
+  <form method="POST" action="/login">
+    <label>Agent ID<br><input type="text" name="username" placeholder="Enter agent codename" required></label>
+    <label>Passphrase<br><input type="password" name="password" placeholder="Enter secure passphrase" required></label>
+    <button type="submit">Authenticate</button>
+  </form>
+</body>
+</html>

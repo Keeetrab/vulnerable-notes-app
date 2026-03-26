@@ -1,0 +1,4 @@
+CONFIDENTIAL: Database backup credentials
+Host: db.internal.company.com
+User: backup_admin
+Password: Sup3rS3cretBackup!

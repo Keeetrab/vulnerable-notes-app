@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Notes — Classified Notes</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="classified-banner">// CLASSIFIED // TOP SECRET // AUTHORIZED PERSONNEL ONLY //</div>
+  <nav>
+    <a href="/">HQ</a> <span class="sep">|</span> <a href="/notes">My Notes</a> <span class="sep">|</span> <a href="/notes/new">New Note</a> <span class="sep">|</span> <a href="/logout">Logout [<%= user.username %>]</a>
+  </nav>
+  <h1>Mission Notes</h1>
+
+  <form method="GET" action="/notes/search" class="search-bar">
+    <input type="text" name="q" placeholder="Search classified intel..." value="<%= search || '' %>">
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (search) { %><p class="search-info">Intel matching: "<%= search %>"</p><% } %>
+
+  <% if (notes.length === 0) { %>
+    <p>No classified notes found.</p>
+  <% } else { %>
+    <ul>
+      <% notes.forEach(note => { %>
+        <li>
+          <a href="/notes/<%= note.id %>"><strong><%= note.title %></strong></a>
+          <small><%= note.created_at %></small>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+</body>
+</html>

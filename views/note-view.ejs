@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= note.title %> — Classified Notes</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="classified-banner">// CLASSIFIED // TOP SECRET // AUTHORIZED PERSONNEL ONLY //</div>
+  <nav>
+    <a href="/">HQ</a> <span class="sep">|</span> <a href="/notes">My Notes</a> <span class="sep">|</span> <a href="/notes/new">New Note</a> <span class="sep">|</span> <a href="/logout">Logout [<%= user.username %>]</a>
+  </nav>
+  <h1><%= note.title %></h1>
+  <p class="note-meta">Logged: <%= note.created_at %></p>
+
+  <!-- VULNERABLE: renders content as raw HTML — stored XSS -->
+  <div class="note-content"><%- note.content %></div>
+
+  <a href="/notes" class="back-link">&larr; Back to mission notes</a>
+</body>
+</html>
